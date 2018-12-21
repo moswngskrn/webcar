@@ -1,0 +1,72 @@
+extends layout
+block content
+  .container
+    .row
+      .col-3
+        .card(style='width: 18rem;')
+            img.card-img-top(src='https://www.weact.org/wp-content/uploads/2016/10/Blank-profile.png', alt='Card image cap')
+            .card-body
+                p.card-text
+                    | วงศกร มะโนเรือน
+                button.btn.btn-primary.btn-lg.btn-block(type='button', data-toggle='modal', data-target='#exampleModal') โพสให้เช่ารถ
+
+      .col-9
+        h1 ยังไม่มีข้อมูล
+        .card-columns#cardcon
+
+
+    #exampleModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+        .modal-dialog(role='document')
+            .modal-content
+                .modal-header
+                    h5#exampleModalLabel.modal-title เปิดให้เช่ารถ
+                    button.close(type='button', data-dismiss='modal', aria-label='Close')
+                        span(aria-hidden='true') ×
+                .modal-body
+                    form(action="http://localhost:3003/api/mycar/cars/postcar",enctype="multipart/form-data",method="POST")
+                        .form-group
+                            label(for='title') หัวข้อ
+                            input#title.form-control(type='text', aria-describedby='emailHelp', placeholder='หัวข้อ',name="title")
+                        .form-group
+                            label(for='detail') รายละเอียด
+                            input#detail.form-control(type='text', placeholder='รายละเอียด',name="detail")
+                        .form-group
+                            label(for='price') ราคา
+                            input#price.form-control(type='text', placeholder='ราคา',name="price")
+                        .form-group
+                            label(for='where') สถานที่
+                            input#where.form-control(type='text', placeholder='สถานที่',name="where")
+                        .form-group
+                            label(for='type') ประเภท
+                            select#type.form-control(name="type")
+                                option จักรยานยนต์
+                                option จักรยาน
+                                option รถยนต์
+                        .form-group
+                            label(for='image') เลือกรูป
+                            input#image.form-control-file(type='file',name="file-to-upload")
+                        button.btn.btn-primary(type='submit') บันทึก
+                .modal-footer
+                    button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+                    
+
+  script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49', crossorigin='anonymous')
+  script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', integrity='sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy', crossorigin='anonymous')
+  script(type='text/javascript', src='https://cdn.jsdelivr.net/jquery/latest/jquery.min.js')
+  script(type='text/javascript', src='https://cdn.jsdelivr.net/momentjs/latest/moment.min.js')
+  script(type='text/javascript', src='https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js')
+  script(type='text/javascript', src='javascripts/profile.js')
+//-   script(type='text/javascript', src='javascripts/search.js')
+
+//-   script.
+//-     $(function() {
+//-     $('input[name="datetimes"]').daterangepicker({
+//-     timePicker: false,
+//-     // startDate: moment().startOf('hour'),
+//-     endDate: moment().startOf('hour').add(32, 'hour'),
+//-     locale: {
+//-     format: 'M/DD/YYYY'
+//-     }
+//-     });
+//-     });

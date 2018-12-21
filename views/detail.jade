@@ -1,0 +1,29 @@
+extends layout
+block content
+    nav(aria-label='breadcrumb') --
+    .container
+        .row
+            .col
+                #carouselExampleControls.carousel.slide(data-ride='carousel')
+                    .carousel-inner
+                    .carousel-item.active
+                        img.d-block.w-100(src='https://d2pa5gi5n2e1an.cloudfront.net/global/images/product/motorcycle/Honda_PCX150/Honda_PCX150_L_1.jpg', alt='First slide')
+                    .carousel-item
+                        img.d-block.w-100(src='https://d2pa5gi5n2e1an.cloudfront.net/global/images/product/motorcycle/Honda_PCX150/Honda_PCX150_L_1.jpg', alt='Second slide')
+                    .carousel-item
+                        img.d-block.w-100(src='https://d2pa5gi5n2e1an.cloudfront.net/global/images/product/motorcycle/Honda_PCX150/Honda_PCX150_L_1.jpg', alt='Third slide')
+                    a.carousel-control-prev(href='#carouselExampleControls', role='button', data-slide='prev')
+                    span.carousel-control-prev-icon(aria-hidden='true')
+                    span.sr-only Previous
+                    a.carousel-control-next(href='#carouselExampleControls', role='button', data-slide='next')
+                    span.carousel-control-next-icon(aria-hidden='true')
+                    span.sr-only Next
+            .col
+                .card
+                    .card-body
+                        h5.card-title Card title
+                        h6.card-subtitle.mb-2.text-muted Card subtitle
+                        p.card-text
+                        | Some quick example text to build on the card title and make up the bulk of the card's content.
+                        a.card-link(href='#') Card link
+                        a.card-link(href='#') Another link

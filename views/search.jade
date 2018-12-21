@@ -1,0 +1,49 @@
+extends layout
+block content
+  .container
+    nav(aria-label='breadcrumb') ค้นหา จังหวัด อำเภอ ตำบล
+    .row
+      .col-3
+        form#form-search(method="GET" action="/search")
+          .form-group
+            input#input-search.form-control(type='text', aria-describedby='emailHelp', placeholder='ตำแหน่ง', value=key name="key")
+          .form-group
+            label(for='exampleInputPassword1') ประเภทรถ
+            .custom-control.custom-radio
+              input#customRadio1.custom-control-input(type='radio', name='customRadio' checked)
+              label.custom-control-label(for='customRadio1') ทั้งหมด
+            .custom-control.custom-radio
+              input#customRadio2.custom-control-input(type='radio', name='customRadio')
+              label.custom-control-label(for='customRadio2') จักรยานยนต์
+            .custom-control.custom-radio
+              input#customRadio3.custom-control-input(type='radio', name='customRadio')
+              label.custom-control-label(for='customRadio3') จักรยาน
+            .custom-control.custom-radio
+              input#customRadio4.custom-control-input(type='radio', name='customRadio')
+              label.custom-control-label(for='customRadio4') รถยนต์
+          //- .form-group
+          //-   label(for='cu<script type="text/javascript" src="javascripts/search.js"></script>stomRange2') ราคาไม่เกิน
+          //-   input#exampleInputEmail1.form-control(type='number', aria-describedby='emailHelp', placeholder='ตำแหน่ง', value='2000')
+          
+      .col-9
+        .card-columns#cardcon
+          .r กำลังโหลด...
+  script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49', crossorigin='anonymous')
+  script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', integrity='sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy', crossorigin='anonymous')
+  script(type='text/javascript', src='https://cdn.jsdelivr.net/jquery/latest/jquery.min.js')
+  script(type='text/javascript', src='https://cdn.jsdelivr.net/momentjs/latest/moment.min.js')
+  script(type='text/javascript', src='https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js')
+  script(type='text/javascript', src='javascripts/search.js')
+
+  script.
+    $(function() {
+    $('input[name="datetimes"]').daterangepicker({
+    timePicker: false,
+    // startDate: moment().startOf('hour'),
+    endDate: moment().startOf('hour').add(32, 'hour'),
+    locale: {
+    format: 'M/DD/YYYY'
+    }
+    });
+    });
